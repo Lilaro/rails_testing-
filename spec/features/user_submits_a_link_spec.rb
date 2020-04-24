@@ -16,6 +16,19 @@ RSpec.feature "User submits a link" do #.feature gives access to all capybara me
     #`page` is a value provided by capybara that gives us `has_link?` which corresponds with `have_link`.
     #can be read as if page.has_link? is false, return an error
   end
+
+  context "the form is invalid" do
+    scenario "they see a useful error message" do
+      link_title = "This testing rails book is awesome!"
+  
+      visit root_path
+      click_on "Submit a new link"
+      fill_in "link_title", with: link_title
+      click_on "Submit!"
+  
+      expect(page).to have_content "Url can't be blank"
+    end
+  end
 end
 
 #Psuedocode:
