@@ -3,7 +3,6 @@ source "https://rubygems.org"
 ruby "2.4.6"
 
 gem 'bootsnap', '>= 1.1.0', require: false
-gem "capybara"
 
 #gem "coffee-rails", "~> 4.1.0"
 gem "jquery-rails"
