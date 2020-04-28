@@ -6,8 +6,17 @@ RSpec.describe Link, "#upvote" do
     
     link.upvote
     
-    expect(link.upvotes).to eq 2 end
+    expect(link.upvotes).to eq 2
   end
+end
+
+RSpec.describe Link, "#score" do
+  it "returns the upvotes minus the downvotes" do
+    link = Link.new(upvotes: 2, downvotes: 1)
+
+    expect(link.score).to eq 1 
+  end
+end
   
 
   # RSpec.describe Link, type: :model do
