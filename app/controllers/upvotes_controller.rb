@@ -2,8 +2,9 @@ class UpvotesController < ApplicationController
 
   def create
     link = Link.find(params[:link_id])
-    link.upvotes += 1
-    link.save
+
+    link.upvote
+    
     redirect_back fallback_location: links_url
   end
 
