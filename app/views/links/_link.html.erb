@@ -1,3 +1,6 @@
-<li>
-  <%= link_to link.title, link.url %>
-</li>
+<%= content_tag_for(:li, link) do %>
+   <%= link_to link.title, link.url %>
+  <%= link_to "Upvote", link_upvotes_path(link), method: :post %>
+  <p data-role="score" > <%= link.upvotes.to_s %> </p>
+
+<% end %> 
